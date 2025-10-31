@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Menu — Zaffran Restaurant{% endblock %}
+{% block content %}
+<div class="container py-5">
+  <h1 class="text-center mb-4">{{ title }}</h1>
+  <div class="row">
+    {% for item in menu_items %}
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body text-center">
+          <h5 class="card-title text-danger">{{ item.name }}</h5>
+          <p class="card-text">{{ item.desc }}</p>
+          <p class="fw-bold">₹{{ item.price }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

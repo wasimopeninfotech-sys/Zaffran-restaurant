@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Contact — Zaffran Restaurant{% endblock %}
+{% block content %}
+<div class="container py-5">
+  <h1 class="text-center mb-4">{{ title }}</h1>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form method="POST" class="p-4 border rounded shadow-sm bg-light">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" name="email" id="email" class="form-control" placeholder="example@mail.com" required>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea name="message" id="message" class="form-control" rows="4" placeholder="Write your message here..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-danger w-100">Send Message</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

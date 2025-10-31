@@ -1,0 +1,145 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zaffran Restaurant | زعفران</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{% static 'hotel/css/style.css' %}">
+</head>
+<script src="{% static 'hotel/js/main.js' %}"></script>
+
+<body>
+  <!-- ===== HEADER / HERO ===== -->
+  <header class="hero" id="home">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1 class="logo">Zaffran <span class="arabic">زعفران</span></h1>
+      <p class="tagline">Where Indian Spice Meets Arabic Elegance</p>
+      <a href="#menu" class="btn">Explore Menu</a>
+    </div>
+  </header>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about">
+    <h2>About <span>زعفران</span></h2>
+    <p>
+      <strong>Zaffran</strong> — meaning <em>“saffron”</em> — symbolizes luxury, aroma, and warmth.
+      We combine the bold flavors of Indian cuisine with the charm of Arabic hospitality.
+      From Hyderabadi biryanis to rich Mughlai curries, every dish tells a story of passion and heritage.
+    </p>
+  </section>
+
+  <!-- ===== MENU SECTION ===== -->
+  <section id="menu">
+    <h2>Our Signature Dishes</h2>
+    <div class="menu-container">
+
+      <div class="menu-card">
+        <img src="{% static 'hotel/images/download.jpeg' %}" alt="Hyderabadi Biryani">
+        <h3>Hyderabadi Biryani <span class="arabic">برياني</span></h3>
+        <p>Fragrant saffron rice layered with tender chicken and spices.</p>
+        <h5>249 INR</h5>
+      </div>
+
+      <div class="menu-card">
+       <img src="{% static 'hotel/images/download (2).jpeg' %}" alt="paneer butter masala">
+        <h3>Paneer Butter Masala <span class="arabic">بانير</span></h3>
+        <p>Soft paneer cubes in creamy tomato gravy, rich with butter and love.</p>
+        <h5>199 INR</h5>
+      </div>
+
+      <div class="menu-card">
+        <img src="{% static 'hotel/images/images.jpeg' %}" alt="Tandoori Roti">
+        <h3>Tandoori Roti <span class="arabic">خبز التنور</span></h3>
+        <p>Chargrilled flatbread made in a clay oven, perfect with curries.</p>
+        <h5>49 INR</h5>
+      </div>
+
+      <div class="menu-card">
+        <img src="{% static 'hotel/images/download (1).jpeg' %}" alt="Shahi Tukda">
+        <h3>Shahi Tukda <span class="arabic">شاهي توكدا</span></h3>
+        <p>Royal dessert of fried bread soaked in saffron milk, topped with nuts.</p>
+        <h5>149 INR</h5>
+      </div>
+
+      <div class="menu-card">
+        <img src="{% static 'hotel/images/images (1).jpeg' %}" alt="Seekh kebab">
+        <h3>Seekh kebab <span class="arabic">سيخ كباب</span></h3>
+        <p>Succulent minced meat infused with aromatic spices, skewered and grilled to smoky perfection in a traditional clay oven.</p>
+        <h5>299 INR</h5>  
+      </div>
+      
+        <div class="menu-card">
+        <img src="{% static 'hotel/images/images (2).jpeg' %}" alt="tandoori paneer tikka">
+        <h3>tandoori paneer tikka <span class="arabic">ندوري بانير تيكا</span></h3>
+        <p>Soft cubes of cottage cheese marinated in spiced yogurt, roasted over glowing coals for a charred aroma and melt-in-the-mouth texture.</p>
+          <h5>249 INR</h5>
+      </div>
+    
+      
+    </div>
+    </section>
+
+  <!-- ===== GALLERY SECTION ===== -->
+  <section id="gallery">
+    <h2>Ambience & Experience</h2>
+    <div class="gallery-container">
+      <img src="{% static 'hotel/images/ambience1.jpeg' %}">
+      <img src="{% static 'hotel/images/ambience2.jpeg' %}">
+      <img src="{% static 'hotel/images/ambience4.jpeg' %}">
+      <img src="{% static 'hotel/images/ambience3.jpeg' %}">
+         <img src="{% static 'hotel/images/ambience5.jpeg'%}">
+        <img src="{% static 'hotel/images/ambience6.jpeg' %}" >
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Have a question or want to book a table? We’d love to hear from you.</p>
+
+    <form method="POST" action="{% url 'contact' %}">
+        {% csrf_token %}
+        
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Your Name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Your Email" required>
+
+        <label>Message</label>
+        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+</section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>&copy; 2025 Zaffran Restaurant | Crafted with ❤️ &amp; <span class="arabic">حب</span></p>
+  </footer>
+
+  <!-- JS -->
+  <script src="{% static 'hotel/js/main.js' %}"></script>
+
+</body>
+</html>
+
